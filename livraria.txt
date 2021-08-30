@@ -1,0 +1,34 @@
+Um cliente chega a você e pede um protótipo de sistema para validar um modelo de negócio. Trata-se do dono de um sebo que está automatizando seu sistema de vendas on-line. Por estar estudando estruturas de dados linguagem C, você decide testar o conceito em um programa nesta linguagem. A ideia inicial é que o sistema crie uma fila de pedidos de livros. Ou seja, o usuário administrador do seu programa deve ser capaz de adicionar novos pedidos ao fim da fila, sempre que uma nova solicitação chegar.
+
+Assim, você parte para a mão na massa, e desenvolve um programa permite que o administrador do sistema (usuário) armazene as informações de um livro:
+
+o Código do livro
+o Nome do livro
+o Nome do(a) autor(a)
+o Preço do livro
+
+Ou seja, toda vez que o usuário cadastrar um novo pedido, suas informações são adicionadas ao final da fila. Ainda, sempre que o usuário desejar remover um pedido da fila, seu programa deve ser capaz de excluir o elemento do início da fila, mantendo a estrutura de dados organizada de forma similar ao que temos na ilustração a seguir:
+
+[MAPA2]
+
+O programa deve ter um menu principal em forma de laço de repetição que atenda aos seguintes requisitos:
+•    O menu sempre deve imprimir o conteúdo da fila (do início em direção ao fim);
+•    Após a impressão do conteúdo da fila, o usuário deve ser informado de que pode realizar as seguintes operações:
+o    Inserir um elemento na fila;
+o    Remover um elemento da fila;
+o    Esvaziar a fila;
+o    Mostrar o valor total dos livros enfileirados;
+o    Encerrar o programa.
+
+A operação “Inserir um elemento na fila” deve, antes de mais nada, verificar se a fila já esta cheia. Se não houver mais espaço na fila, o usuário deve ser informado, e o programa volta para o menu inicial. Caso não esteja cheia, o programa deve solicitar que o usuário informe o código do livro, nome do livro, nome do(a) autor(a) e preço do livro, inserindo essas informações no fim da fila.
+
+A operação “Remover um elemento da fila” deve tentar retirar o pedido que está na primeira posição da fila. Caso haja elemento para ser removido, todos os dados do respectivo pedido devem ser impressos na tela: código do livro, nome do livro, nome do(a) autor(a) e preço do livro. Se a fila estiver vazia, o usuário deve ser informado e o programa simplesmente retorna ao menu principal.
+
+A operação “Esvaziar a fila” deve remover todos os elementos da fila.
+
+A operação “Encerrar programa” deve finalizar o processo.
+
+Observações: 
+a)    O código-fonte deve ser escrito de forma a implementar estruturas de dados estáticas. Nesse caso, nossa fila deverá ter, no máximo, 5 posições para armazenar elementos (tamanho igual a 5);
+b)    A correção será feita em ambiente Dev C++, no padrão C ANSI. Assim, caso o(a) aluno(a) tenha desenvolvido seu código em outra IDE/Compilador, é importante que o(a) aluno(a) garanta que seu código também é compilável/executável em ambiente Dev C++. Essa é uma responsabilidade do(a) aluno(a), e não da equipe de correção;
+c) Envie apenas um único arquivo-fonte com extensão .c para que sua atividade seja submetida à correção.
