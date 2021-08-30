@@ -1,1 +1,3 @@
-# Description
+# Curiosidades ... 
+
+Criando API em Java e uns programinha em C <3
