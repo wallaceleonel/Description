@@ -56,7 +56,7 @@ printf("\n informe 'v' para valor do livro ");
 printf("\n informe 'l' para listar todos os livros registrados ");
 printf("\n ’q’ para terminar: ");
 
-ch = getchar();
+ch = getchar(); 
 
 switch (ch)
 {
