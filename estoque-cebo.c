@@ -1,53 +1,104 @@
-//cliene e dono de um cebo e quer ter seu controle de estoque 
-//Progama devara efetuar seguintes controles de estoque 
-// codigo do livro ok 
-//nome do lirvro   ok 
-// nome do autor   ok 
-//preco do livro   ok 
-//alocar todas as informacoes em um unico cara ... 
-// adiciorar remover encerrar | estoque |
+/* 
+cliene e dono de um cebo e quer ter seu controle de estoque 
+Progama devara efetuar seguintes controles de estoque 
+codigo do livro ok 
+nome do lirvro   ok 
+nome do autor   ok 
+preco do livro   ok 
+alocar todas as informacoes em um unico cara ... 
+adiciorar remover encerrar | estoque |
 
+*/
 // carrinho cliente 
 //criar uma lista de pedidos , exibindo livros que cliente ira levar 
-// tendo possibilidade de exclusao do item 
-__has_include(studio.h)
 
-include (__TIME__)
-int main(void){
-      char, lvr,auth,name, tag;
-      int qtd,prc;
+#include <stdio.h> /* funções padrão de E/S */
+#define FNOME "livros.txt" /* nome do arquivo de dados */
+#define NUM 50 /* numero de registros na base de dados */
+#define NOMELEN 30 /* tamanho de um nome */
+/*** declara estrutura de dados ***/
+struct livro
+{
+char nome [NOMELEN]; /* nome codigo(sem espaços em branco) */
+int tag ; /* numero codigo */};
+/*** prototipos ***/
+int nomelivro(struct livro []);
+int tag(struct livro [], int);
+int preco(struct livro [],int);
+int auth(struct livro []);
+void listatudo(struct livro [],int);
+void salvadb(struct livro []);
 
-//coleta de informacoes para criacao de estoque do sebo Giropops      
-      printf("Ola , bem vindo ao Giropos <3",sllep=0.3s);
-      
-      printf("Me diga qual livro ira querer , mas antes irei te 
-      fazer algumas perguntas para localizar ele, vamos la ?",sllep=0.3s);
-      
-      printf("Me diga o nome do livro ");
-      scanf("%c",&lvr);
-      
-      printf("Codigo do livro ");
-      scanf("%c",&tag);
+main()
+{
+struct livro registos[50]; /* array de 50 estruturas */
+int t,u,v,a; /* indice para o ultimo registro ativo */
+char ch,n;
 
-      printf("nome do autor ");
-      scarnf("%c",&auth);
-      
-      printf("valor do livro");
-      scanf("%i",prc);
+/*** carrega a base de dados em agentes[], n é o tamanho da base de dados */
+
+n = loaddb(livro);
+
+/* seleciona uma opção do menu e processa os dados em memória */
+
+switch (ch)
+ 
+ printf("Hello Word , bem vindo ao cebo Girpopos <3");
+
+ printf(" Me diga qual livro ira querer , mas antes irei te fazer algumas perguntas para localizar ele, vamos la ?");
+
+do{
+
+printf("\nDigite ’a’ para adicionar novo livro,");
+printf("\n ’t' para adicionar tag,");
+printf("\n informe 'u' para adicionar nome do autor ");
+printf("\n informe 'v' para valor do livro ");
+printf("\n informe 'l' para listar todos os livros registrados ");
+printf("\n ’q’ para terminar: ");
+
+ch = getchar();
+
+switch (ch)
+{
+case 'a':
+n = novonome(livro, n); /* adiciona um novo agente no indice n */
+break;
+case 't':
+tag (livro,n);
+break;
+case 'u':
+auth (livro,n);
+break;
+
+case 'v':
+preco(livro,n);
+break;
+
+case 'l': /* lista todos os registros */
+listatudo(livro,n);
+break;
+
+case 'q': /* salva todos os registros */
+salvadb(livro,n);
+break;
+default: /* Engano do usuario */
+
+printf("\nEntre somente as opções listadas.\n");
+}
+
+while (fgetc(stdin) != '\n');
+}while (ch != 'q');
        
-      printf("quantidade ");
-      scanf("%i",&qtd);
+/*passando informacoes para armazenamento de variaveis 
+armazenameto sera feito em matriz assim passando por referencia todas as informacoes ao mesmo item em questao , o livro
+lvr == tag == auth == prc == qtd , problema e fazer todos fazerem refencia em mudar 
+a ideia e armazenar infomracoes coletadas a um item
+tentando lembrar como faz isso , loading ...... 
 
-//passando informacoes para armazenamento de variaveis 
-// armazenameto sera feito em matriz assim passando por referencia todas as informacoes ao mesmo item em questao , o livro
-// lvr == tag == auth == prc == qtd , problema e fazer todos fazerem refencia em mudar 
-// a ideia e armazenar infomracoes coletadas a um item
-//tentando lembrar como faz isso , loading ...... 
-
-// perguntar se deseja icluir mais um livro 
-// se sim , retornar perguntas // se nao encerrar iclusao de livros 
-
-return 0;
+ perguntar se deseja icluir mais um livro 
+ se sim  retornar perguntas // se nao encerrar iclusao de livros 
+*/
+return 0 ;
 }
 
 
