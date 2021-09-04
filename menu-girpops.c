@@ -5,8 +5,8 @@
 int main (){
     char livro[30][40],autor[40][50];
     char tag[100];
-    int preco,op,qtd,cont=0,sacola,total=0;
-    int cont=1;
+    int preco=0,op,qtd,cont=0,sacola,total=0;
+    int cont=1,car,mode,apagar;
     aux =0;
     sair =2;
     while (sair==2) {
@@ -55,14 +55,25 @@ int main (){
       printf("\t\t%c--------------------------------------------------------%c",155,187);
       printf("\n\t\t|             Carrinho Giropops Bliclioteca on            |\n");
       printf("\t\t%c--------------------------------------------------------%c",155,187);
-      total = qtd *preco;
+      total = qtd*preco;
 
       printf("Carrinho de compras ");
       for(cont=0;cont<aux;cont++){
-        
+        printf("\n%d%d     -     %s\n\n",cont,total,livro[cont]);
       }
-     printf("informe se gostaria de remover algum livro de sua lista :")
-     scanf("%d",&remove);
+     
+     printf("Estes são os itens em seu carrinho :")
+     scanf("%d",&car);
+     
+       printf("\n nome do livro :%s \n ",livro[car]);
+       printf("\n nome do autor : %s \n ",autor[car]);
+       printf("\n codigo do livro : %s \n ",tag[car]);
+       printf("\n preco do livro  %d \n ",preco[car]);
+       
+       system("pause");
+       break;
+
+       
       }
       default:
          break;
