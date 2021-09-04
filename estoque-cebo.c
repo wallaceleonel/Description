@@ -37,7 +37,7 @@ char ch,n;
 
 /*** carrega a base de dados em agentes[], n é o tamanho da base de dados */
 
-n = loaddb(livro);
+//n = loaddb(livro);
 
 /* seleciona uma opção do menu e processa os dados em memória */
 
@@ -49,37 +49,37 @@ switch (ch)
 
 do{
 
-printf("\nDigite ’a’ para adicionar novo livro,");
-printf("\n ’t' para adicionar tag,");
+printf("\nDigite 'a' para adicionar novo livro,");
+printf("\n 't' para adicionar tag,");
 printf("\n informe 'u' para adicionar nome do autor ");
 printf("\n informe 'v' para valor do livro ");
 printf("\n informe 'l' para listar todos os livros registrados ");
 printf("\n ’q’ para terminar: ");
 
-ch = getchar(); 
+ch=getchar(); 
 
 switch (ch)
 {
 case 'a':
-n = novonome(livro, n); /* adiciona um novo agente no indice n */
+//n = novonome(livro, n); /* adiciona um novo agente no indice n */
 break;
 case 't':
-tag (livro,n);
+//tag (livro,n);
 break;
 case 'u':
-auth (livro,n);
+//auth (livro,n);
 break;
 
 case 'v':
-preco(livro,n);
+//preco(livro,n);
 break;
 
 case 'l': /* lista todos os registros */
-listatudo(livro,n);
+//listatudo(livro,n);
 break;
 
 case 'q': /* salva todos os registros */
-salvadb(livro,n);
+//salvadb(livro,n);
 break;
 default: /* Engano do usuario */
 
