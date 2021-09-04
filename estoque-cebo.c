@@ -12,93 +12,131 @@ adiciorar remover encerrar | estoque |
 // carrinho cliente 
 //criar uma lista de pedidos , exibindo livros que cliente ira levar 
 
-#include <stdio.h> /* funções padrão de E/S */
-#define FNOME "livros.txt" /* nome do arquivo de dados */
-#define NUM 50 /* numero de registros na base de dados */
-#define NOMELEN 30 /* tamanho de um nome */
-/*** declara estrutura de dados ***/
-struct livro
-{
-char nome [NOMELEN]; /* nome codigo(sem espaços em branco) */
-int tag ; /* numero codigo */};
-/*** prototipos ***/
-int nomelivro(struct livro []);
-int tag(struct livro [], int);
-int preco(struct livro [],int);
-int auth(struct livro []);
-void listatudo(struct livro [],int);
-void salvadb(struct livro []);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-main()
-{
-struct livro registos[50]; /* array de 50 estruturas */
-int t,u,v,a; /* indice para o ultimo registro ativo */
-char ch,n;
-
-/*** carrega a base de dados em agentes[], n é o tamanho da base de dados */
-
-//n = loaddb(livro);
-
-/* seleciona uma opção do menu e processa os dados em memória */
-
-switch (ch)
+int main (){
+    char livro[30][40],autor[50],tag[45];
+    
+    int preco[50],qtd,cont=1,sacola[100],total=0;
+    
+    int aux,sair,op,car,excluir,apagar,remov,pagando;
+    
+    aux=0;
+    sair =2;
+    
+    while (sair==2) {
+      system("cls");
+      
+      printf("\t\t%c--------------------------------------------------------%c",155,187);
+      printf("\n\t\t|      Adicicionando livros  Giropops Bliclioteca on           |\n");
+      printf("\t\t%c--------------------------------------------------------%c",155,187);
+      
+      printf("op 1 começar a comprar informe seus livros :) >>>>CLIQUE AQUI<<<<<<<\n");
+      printf("op 2 vizualizar sacola \n");
+      printf("op 3 deseja remover algo ? \n");
+      printf("op 4 finalizar venda \n");
+      
+      printf("digite a opacao :) ");
+      scanf("%d",&op);
+      
+      switch (op){
+      case 1:
+         system("cls");
+         printf("Quantos livros deseja adionar ?");
+         scanf("%d",&qtd);
  
- printf("Hello Word , bem vindo ao cebo Girpopos <3");
+      for (cont=0;cont<qtd;cont++){
+         
+         printf("\ninforme o nome do livro :");
+         fflush(stdin);
+         scanf("%[^\n]s",&livro[aux]);
+         
+         printf("\ninfome o nome do autor :");
+         fflush(stdin);
+         scanf("%[^\n]s",&autor[aux]);
+         
+         printf("\n informe a tag deste livro :");
+         fflush(stdin);
+         scanf("%[^\n]s",&tag[aux]);
+         
+         printf("\ninforme o preco do livro :");
+         fflush(stdin);
+         scanf("%d",&preco[aux]);
+         
+       aux++; //snedo usado como contador apagando ...   
+      }
+      system("pause");
+      break;
+      case 2:
+      system("cls");
+      
+      printf("\t\t%c--------------------------------------------------------%c",155,187);
+      printf("\n\t\t|             Carrinho Giropops Bliclioteca on            |\n");
+      printf("\t\t%c--------------------------------------------------------%c",155,187);
+      total = qtd*preco[50];
 
- printf(" Me diga qual livro ira querer , mas antes irei te fazer algumas perguntas para localizar ele, vamos la ?");
-
-do{
-
-printf("\nDigite 'a' para adicionar novo livro,");
-printf("\n 't' para adicionar tag,");
-printf("\n informe 'u' para adicionar nome do autor ");
-printf("\n informe 'v' para valor do livro ");
-printf("\n informe 'l' para listar todos os livros registrados ");
-printf("\n ’q’ para terminar: ");
-
-ch=getchar(); 
-
-switch (ch)
-{
-case 'a':
-//n = novonome(livro, n); /* adiciona um novo agente no indice n */
-break;
-case 't':
-//tag (livro,n);
-break;
-case 'u':
-//auth (livro,n);
-break;
-
-case 'v':
-//preco(livro,n);
-break;
-
-case 'l': /* lista todos os registros */
-//listatudo(livro,n);
-break;
-
-case 'q': /* salva todos os registros */
-//salvadb(livro,n);
-break;
-default: /* Engano do usuario */
-
-printf("\nEntre somente as opções listadas.\n");
-}
-
-while (fgetc(stdin) != '\n');
-}while (ch != 'q');
+      printf("Carrinho de compras ");
+      for(cont=0;cont<aux;cont++){
+        printf("\n%d\n%d     -     %s\n\n",cont,total,livro[cont]);
+      }
+     
+     printf("Estes são os itens em seu carrinho :");
+     scanf("%d",&car);
+     
+       printf("\n nome do livro :%s \n ",livro[car]);
+       printf("\n nome do autor : %s \n ",autor[car]);
+       printf("\n codigo do livro : %s \n ",tag[car]);
+       printf("\n preco do livro  %d \n ",preco[car]);
        
-/*passando informacoes para armazenamento de variaveis 
-armazenameto sera feito em matriz assim passando por referencia todas as informacoes ao mesmo item em questao , o livro
-lvr == tag == auth == prc == qtd , problema e fazer todos fazerem refencia em mudar 
-a ideia e armazenar infomracoes coletadas a um item
-tentando lembrar como faz isso , loading ...... 
+       system("pause");
+       break;
 
- perguntar se deseja icluir mais um livro 
- se sim  retornar perguntas // se nao encerrar iclusao de livros 
-*/
-return 0 ;
-}
+       case 3:
+       system("cls");
+       printf("\t\t%c--------------------------------------------------------%c",155,187);
+       printf("\n\t\t|    remover itens Giropops Bliclioteca on |\n");
+       printf("\t\t%c--------------------------------------------------------%c",155,187);
+               
+         printf("codigo - Carrinho ");
+         for (cont=0;cont<aux;cont++){
+            printf("\n%d \n%d    -    %s\n",cont,total,livro[cont]); //aux é quantidades de linha 
+         }
+         
+         printf("Digite qual codigo do livro ira remover se desejar :");
+         scanf("%d",&excluir);
 
+         for (apagar=excluir;apagar<aux;apagar++){
+            
+            remov=apagar+1;
+                     
+             strcpy(livro[apagar],livro[remov]); //copia o valor cliente pata [cliente excluir]
+             autor[apagar]=autor[remov];
+             tag[apagar]=tag[remov];
+             preco[apagar]=preco[remov];
+             }
+             aux=aux+1;
+             system("pause");
+      
+      break;
+      case 4:
+            ystem("cls");
+       printf("\t\t%c--------------------------------------------------------%c",155,187);
+       printf("\n\t\t|    fechando a conta ! Giropops Bliclioteca on |\n");
+       printf("\t\t%c--------------------------------------------------------%c",155,187);  
+       
+       printf("Deseja encerra a compra ou gostaria de adicionar mais algum item ?");
+       printf(" 1-Sim   2-NAO  ");
+       scanf("%d",&pagando);
 
+       printf("%d total de sua compra é :  \n\n",total);
+       
+         
+         break;
+      }//switch
+      
+        
+        
+        
+    
