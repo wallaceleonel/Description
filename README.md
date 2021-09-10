@@ -1,3 +1,3 @@
-# Curiosidades ... 
+# _Curiosidades ..._ 
 
-Criando API em Java e uns programinha em C <3
+_Criando um sistema de estoque e produção  em Java e uns programinha mais simples  em C <3_
