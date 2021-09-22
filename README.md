@@ -1,3 +1,5 @@
 # Curiosidades ... 
 
-Criando API em Java e uns programinha em C <3
+<img src="https://cdn-icons-png.flaticon.com/512/949/949886.png"  align="right" width="250">
+
+Otimizando o ambiente de produção 
