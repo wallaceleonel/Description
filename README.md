@@ -5,4 +5,4 @@
  <p>
   Criando um sistema de estoque e produção  em Java e uns programinha mais simples  em C <3
  </p>
-<img src="https://img-premium.flaticon.com/png/512/3594/premium/3594724.png?token=exp=1632101503~hmac=a60f9310555c77430e74352f45ded8ac"  align="center" width="">
+<img src="https://cdn-icons-png.flaticon.com/512/995/995385.png"  align="center" width="150">
